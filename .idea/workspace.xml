@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b953573c-9b8f-4da4-a9e3-3cac2eadb6ac" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/contributors.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="studentnook.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -142,12 +142,12 @@
       <option name="presentableId" value="Default" />
       <updated>1460721628012</updated>
       <workItem from="1460721629219" duration="625000" />
-      <workItem from="1460722650474" duration="390000" />
+      <workItem from="1460722650474" duration="685000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1015000" />
+    <option name="totallyTimeSpent" value="1310000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1371" height="736" extended-state="0" />
