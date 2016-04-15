@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b953573c-9b8f-4da4-a9e3-3cac2eadb6ac" name="Default" comment="">
+    <list default="true" id="b953573c-9b8f-4da4-a9e3-3cac2eadb6ac" name="Default" comment="'Initial'&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="studentnook.iws" />
@@ -22,6 +22,7 @@
     <favorites_list name="studentnook" />
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="FORCE_PUSH_ALLOWED" value="true" />
@@ -143,7 +144,7 @@
       <option name="presentableId" value="Default" />
       <updated>1460721628012</updated>
       <workItem from="1460721629219" duration="625000" />
-      <workItem from="1460722650474" duration="880000" />
+      <workItem from="1460722650474" duration="1209000" />
     </task>
     <task id="LOCAL-00001" summary="'Initial'&#10;">
       <created>1460723339092</created>
@@ -166,11 +167,25 @@
       <option name="project" value="LOCAL" />
       <updated>1460723503559</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="'Initial'&#10;">
+      <created>1460723534149</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1460723534149</updated>
+    </task>
+    <task id="LOCAL-00005" summary="'Initial'&#10;">
+      <created>1460723586260</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1460723586260</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1505000" />
+    <option name="totallyTimeSpent" value="1834000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1371" height="736" extended-state="0" />
