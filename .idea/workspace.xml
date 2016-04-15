@@ -24,6 +24,7 @@
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="FORCE_PUSH_ALLOWED" value="true" />
     <option name="PUSH_TAGS">
       <GitPushTagMode />
     </option>
@@ -142,7 +143,7 @@
       <option name="presentableId" value="Default" />
       <updated>1460721628012</updated>
       <workItem from="1460721629219" duration="625000" />
-      <workItem from="1460722650474" duration="849000" />
+      <workItem from="1460722650474" duration="880000" />
     </task>
     <task id="LOCAL-00001" summary="'Initial'&#10;">
       <created>1460723339092</created>
@@ -158,11 +159,18 @@
       <option name="project" value="LOCAL" />
       <updated>1460723470960</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="'Initial'&#10;">
+      <created>1460723503559</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1460723503559</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1474000" />
+    <option name="totallyTimeSpent" value="1505000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1371" height="736" extended-state="0" />
