@@ -47,19 +47,24 @@
         </div>
         <div class="form-group" style="margin-bottom: 0px;">
             <div class="col-xs-12">
-                <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                <input style="margin-bottom: 6px;" type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+                <!--- Email address Field --->
+                {!! Form::label('email', 'Email address:', ['class' => 'sr-only']) !!}
+                {!! Form::email('email', null, ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Enter email']) !!}
             </div>
             <div class="col-xs-12">
-                <label class="sr-only" for="exampleInputPassword2">Password</label>
-                <input style="margin-bottom: 6px;" type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                <!--- Password Field --->
+                {!! Form::label('password', 'Password:', ['class' => 'sr-only']) !!}
+                {!! Form::password('password', ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Password']) !!}
             </div>
             <div class="col-xs-6">
+
                 <div class="label" style="color: gray;">
-                    <input id="persist_box" type="checkbox" name="persistent" value="1" tabindex="3" class="uiInputLabelInput uiInputLabelCheckbox">
-                    <label for="persist_box">Keep me logged in</label>
+                    <label>
+                        {!! Form::checkbox('keeplogged', '1', null,  ['id' => 'keeplogged']) !!}
+                        Keep me logged in
+                    </label>
                 </div>
-                <input type="hidden" name="default_persistent" value="0">
+                <input type="hidden" name="default_keeplogged" value="0">
             </div>
             <div class="col-xs-6" style="margin-top: 3px;">
                 <a class="label" style="color: gray;" href="/recover">Forgot your password?</a>
@@ -90,15 +95,15 @@
         <div class="row">
             <div class="navbar-collapse collapse">
                 <div class="col-md-9 col-lg-10 col-xs-8 col-sm-8">
-                    <input type="text" placeholder="Search Material..." class="textox">
-                    <button id="search" type="button" class="btn glyphicon glyphicon-search"></button>
+                    {!! Form::text('search', 'Search Material...', ['class' => 'textox']) !!}
+                    {!! Form::button('', ['class' => 'btn glyphicon glyphicon-search']) !!}
                 </div>
                 <div class="col-md-3 col-lg-2 col-xs-4 col-sm-4">
                     <!--<a class="btn1" type="button" href="#signInCollapse"> Sign In |</a>
                      <a class="btn2" type="button" href="#signUpCollapse"> |Sign Up </a>-->
                     <div class="pull-right">
-                        <button type="button" class="btn" data-toggle="modal" data-target="#signIn">Sign In</button>
-                        <button type="button" class="btn" data-toggle="modal" data-target="#signUp">Sign Up</button>
+                        {!! Form::button('Sign In', ['class' => 'btn', 'data-toggle' => 'modal', 'data-target' => '#signIn']) !!}
+                        {!! Form::button('Sign Up', ['class' => 'btn', 'data-toggle' => 'modal', 'data-target' => '#signUp']) !!}
                     </div>
 
                 </div>
@@ -115,19 +120,14 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <br><input class="info" id="userName" type="text"
-                                                   placeholder="Username..."></br>
-                                        <br><input class="info" id="passWord" type="password"
-                                                   placeholder="password..."></br>
-                                        <br>
-                                        <button type="submit" class="btn">Submit</button>
-                                        </br>
+                                        {!! Form::text('userName', null, ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Username...']) !!}
+                                        {!! Form::text('username', null, ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Username...']) !!}
+                                        {!! Form::button('Login', ['class' => 'form-control btn-info']) !!}
                                     </div>
                                     <div class="col-sm-3">
-                                        <br>
-                                        <p class="info">Not yet a member? Sign up for free!
-                                            Earn Money with school stuff you don't use anymore</p></br>
-                                        <button type="submit" class="btn">Sign Up</button>
+                                            <p class="info" style="margin-bottom: 12px;">Not yet a member? Sign up for free!
+                                                Earn Money with school stuff you don't use anymore</p>
+                                        {!! Form::button('Signup', ['class' => 'form-control btn-info']) !!}
                                     </div>
                                 </div>
                             </div>
