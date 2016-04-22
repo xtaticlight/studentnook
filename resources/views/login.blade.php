@@ -17,14 +17,9 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="{{URL::asset('js/html5shiv.min.js')}}"></script>
+    <script src="{{URL::asset('js/respond.min.js')}}"></script>
     <![endif]-->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="{{URL::asset('js/jquery.min.js')}}"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{URL::asset('js/jasny-bootstrap.min.js')}}"></script>
 </head>
 <body class="master_style">
 <div style="background-color: #efefef">
@@ -41,15 +36,16 @@
 
 <!--Navbar-->
 <div class="navmenu navmenu-default navmenu-fixed-left offcanvas">
-    <div class="col-xs-12">
-        <div class="col-xs-12">
-            <h2>Login</h2>
+    <div id="switcher" class="col-xs-12">
+        <img src="{{URL::asset('img/nook.png')}}" style="width: 120px">
+        <div id="loginform1" class="col-xs-12">
+            <h2 style="font-weight: bold">Login</h2>
         </div>
-        <div class="form-group" style="margin-bottom: 0px;">
+        <div id="loginform2" class="form-group" style="margin-bottom: 0px;">
             <div class="col-xs-12">
-                <!--- Email address Field --->
-                {!! Form::label('email', 'Email address:', ['class' => 'sr-only']) !!}
-                {!! Form::email('email', null, ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Enter email']) !!}
+                <!--- Username Field --->
+                {!! Form::label('username', 'Username:', ['class' => 'sr-only']) !!}
+                {!! Form::text('username', null, ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Username']) !!}
             </div>
             <div class="col-xs-12">
                 <!--- Password Field --->
@@ -57,7 +53,6 @@
                 {!! Form::password('password', ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Password']) !!}
             </div>
             <div class="col-xs-6">
-
                 <div class="label" style="color: gray;">
                     <label>
                         {!! Form::checkbox('keeplogged', '1', null,  ['id' => 'keeplogged']) !!}
@@ -70,12 +65,60 @@
                 <a class="label" style="color: gray;" href="/recover">Forgot your password?</a>
             </div>
         </div>
-        <div class="col-xs-6" style="margin-top: 6px;">
-            <button type="submit" class="btn btn-info" style="margin-bottom: 12px;">Sign in</button>
+        <div id="loginform3" class="col-xs-6" style="margin-top: 6px;">
+            {!! Form::submit('Sign in', ['class' => 'btn btn-info']) !!}
         </div>
-        <div class="col-xs-6" style="margin-top: 6px;">
+        <div id="loginform4" class="col-xs-6" style="margin-top: 6px;">
             <div class="pull-right">
-                <button type="submit" class="btn btn-info" style="margin-bottom: 12px;">Sign up</button>
+                {!! Form::button('Sign up', ['class' => 'btn btn-info', 'id' => 'signingup']) !!}
+            </div>
+        </div>
+        <div id="signupform1" class="col-xs-12" style="display: none;">
+            <h2 style="font-weight: bold">Register</h2></div>
+        <div id="signupform2" class="form-group" style="margin-bottom: 0px;display: none;">
+            <div class="col-xs-12">
+                <!--- Username Field --->
+                {!! Form::label('username', 'Username:', ['class' => 'sr-only']) !!}
+                {!! Form::text('username', null, ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Username']) !!}
+            </div>
+            <div class="col-xs-12">
+                <!--- Password Field --->
+                {!! Form::label('password', 'Password:', ['class' => 'sr-only']) !!}
+                {!! Form::password('password', ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Password']) !!}
+            </div>
+            <div class="col-xs-12">
+                <!--- Re-password Field --->
+                {!! Form::label('re-password', 'Re-password:', ['class' => 'sr-only']) !!}
+                {!! Form::password('re-password', ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Confirm Password']) !!}
+            </div>
+            <div class="col-xs-12">
+                <!--- Email address Field --->
+                {!! Form::label('email', 'Email address:', ['class' => 'sr-only']) !!}
+                {!! Form::email('email', null, ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Email Address']) !!}
+            </div>
+            <div class="col-xs-12">
+                {!! Form::select('university', ['MUST', 'XU', 'COC', 'LDCU'] , null , ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'University']) !!}
+            </div>
+            <div class="col-xs-12">
+                <!--- Firstname Field --->
+                {!! Form::label('firstname', 'Firstname:', ['class' => 'sr-only']) !!}
+                {!! Form::text('firstname', null, ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Firstname']) !!}
+            </div>
+            <div class="col-xs-12">
+                <!--- Lastname Field --->
+                {!! Form::label('lastname', 'Lastname:', ['class' => 'sr-only']) !!}
+                {!! Form::text('lastname', null, ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Lastname']) !!}
+            </div>
+            <div class="col-xs-12">
+                {!! Form::select('year', ['1st Year', '2nd Year', '3rd Year', '4th Year', '5th Year'] , null , ['class' => 'form-control', 'style' => 'margin-bottom: 10px', 'placeholder' => 'Year']) !!}
+            </div>
+        </div>
+        <div id="signupform3" class="col-xs-6" style="margin-top: 6px;display: none;">
+            {!! Form::submit('Sign up', ['class' => 'btn btn-info']) !!}
+        </div>
+        <div id="signupform4" class="col-xs-6" style="margin-top: 6px;display: none;">
+            <div class="pull-right">
+                {!! Form::button('Back', ['class' => 'btn btn-info', 'id' => 'signingin']) !!}
             </div>
         </div>
     </div>
@@ -94,9 +137,16 @@
     <div class="container">
         <div class="row">
             <div class="navbar-collapse collapse">
-                <div class="col-md-9 col-lg-10 col-xs-8 col-sm-8">
-                    {!! Form::text('search', 'Search Material...', ['class' => 'textox']) !!}
-                    {!! Form::button('', ['class' => 'btn glyphicon glyphicon-search']) !!}
+                <div class="col-md-4 col-lg-4 col-xs-4 col-sm-4">
+                    <div class="col-md-10 col-lg-10 col-xs-10 col-sm-10" style="padding-right: 5px;padding-left: 0px;">
+                        {!! Form::text('search', null, ['class' => 'form-control', 'placeholder' => 'Search Material...']) !!}
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xs-2 col-sm-2" style="padding-left: 0px;">
+                        {!! Form::button('', ['class' => 'btn glyphicon glyphicon-search']) !!}
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-6 col-xs-4 col-sm-4">
+
                 </div>
                 <div class="col-md-3 col-lg-2 col-xs-4 col-sm-4">
                     <!--<a class="btn1" type="button" href="#signInCollapse"> Sign In |</a>
@@ -117,18 +167,33 @@
                             <h2 class="modal-title">Login</h2>
                         </div>
                         <div class="modal-body">
-                            <div class="container">
+                            <div class="container" style="padding-top: 0px;">
                                 <div class="row">
-                                    <div class="col-sm-3">
-                                        {!! Form::text('userName', null, ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Username...']) !!}
+                                    <div class="col-md-4 col-lg-3 col-sm-5">
                                         {!! Form::text('username', null, ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Username...']) !!}
-                                        {!! Form::button('Login', ['class' => 'form-control btn-info']) !!}
+                                        {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password...']) !!}
+                                        <div class="col-xs-6" style="padding-left: 0px;">
+                                            <div class="label" style="color: gray;">
+                                                <label style="margin-bottom: 7px;">
+                                                    {!! Form::checkbox('keeplogged', '1', null,  ['id' => 'keeplogged']) !!}
+                                                    Keep me logged in
+                                                </label>
+                                            </div>
+                                            <input type="hidden" name="default_keeplogged" value="0">
+                                        </div>
+                                        <div class="col-xs-6" style="margin-top: 2px;">
+                                            <a class="label" style="color: gray;" href="/recover">Forgot your password?</a>
+                                        </div>
+                                        {!! Form::button('Login', ['class' => 'form-control btn-info', 'style' => 'margin-top: 6px']) !!}
                                     </div>
-                                    <div class="col-sm-3">
-                                            <p class="info" style="margin-bottom: 12px;">Not yet a member? Sign up for free!
-                                                Earn Money with school stuff you don't use anymore</p>
-                                        {!! Form::button('Signup', ['class' => 'form-control btn-info']) !!}
+                                    <div class="col-md-3 hidden-lg col-sm-4">
+                                        {!! Form::textarea('body', 'Not yet a member? Sign up for free! Earn Money with school stuff you don\'t use anymore.', ['class' => 'form-control', 'style' => 'height: 94px', 'readonly']) !!}
+                                        {!! Form::button('Signup', ['class' => 'form-control btn-info', 'style' => 'margin-top: 6px']) !!}
                                     </div>
+                                    <div class="hidden-md col-lg-3 hidden-sm">
+                                        <textarea readonly name="body" id="body" cols="50" rows="50" class="form-control" style="height: 94px">Not yet a member?&#13;&#10;Sign up for free!&#13;&#10;Earn Money with school stuff you don't use anymore.</textarea>
+                                        {!! Form::button('Signup', ['class' => 'form-control btn-info', 'style' => 'margin-top: 6px']) !!}
+                                    </div>1
                                 </div>
                             </div>
 
@@ -147,44 +212,59 @@
                             <h2 class="modal-title">Sign Up</h2>
                         </div>
                         <div class="modal-body">
-                            <div class="container">
+                            <div class="container" style="padding-top: 0px">
                                 <div class="row">
-                                    <div class="col-sm-3">
-                                        <br><input class="info" id="userName" type="text"
-                                                   placeholder="Username..."></br>
-                                        <br><input class="info" id="passWord" type="password"
-                                                   placeholder="Password..."></br>
-                                        <br><input class="info" id="passWord2" type="password"
-                                                   placeholder="Confirm password..."></br>
-                                        <br><input class="info" id="email" type="text"
-                                                   placeholder="Email Address..."></br>
-                                        <select class="info" placeholder="School">
-                                            <option value="MUST">MUST</option>
-                                            <option value="XU">XU</option>
-                                            <option value="COC">COC</option>
-                                            <option value="LDCU">LDCU</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <br><input class="info" id="firstName" type="text"
-                                                   placeholder="First Name..."></br>
-                                        <br><input class="info" id="lastName" type="text"
-                                                   placeholder="Last Name..."></br>
-                                        <br><input class="info" id="age" type="text" placeholder="Age..."></br>
-                                        <select class="info" placeholder="Year Level">
-                                            <option value="1st">1st year</option>
-                                            <option value="2nd">2nd Year</option>
-                                            <option value="3rd">3rd Year</option>
-                                            <option value="4th">4th Year</option>
-                                            <option value="5th">5th Year</option>
-                                        </select>
-                                        <br>
-                                        <button type="submit" class="btn">Submit</button>
-                                        </br>
+                                    <div id="signupform2" class="form-group col-md-7 col-lg-6 col-sm-9"
+                                         style="margin-bottom: 0px;">
+                                        <div class="form-group col-md-6 col-lg-6 col-sm-6 col-xs-6"
+                                             style="margin-bottom: 0px;">
+                                            <div class="col-xs-12">
+                                                <!--- Username Field --->
+                                                {!! Form::label('username', 'Username:', ['class' => 'sr-only']) !!}
+                                                {!! Form::text('username', null, ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Username']) !!}
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <!--- Password Field --->
+                                                {!! Form::label('password', 'Password:', ['class' => 'sr-only']) !!}
+                                                {!! Form::password('password', ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Password']) !!}
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <!--- Re-password Field --->
+                                                {!! Form::label('re-password', 'Re-password:', ['class' => 'sr-only']) !!}
+                                                {!! Form::password('re-password', ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Confirm Password']) !!}
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <!--- Email address Field --->
+                                                {!! Form::label('email', 'Email address:', ['class' => 'sr-only']) !!}
+                                                {!! Form::email('email', null, ['class' => 'form-control', 'style' => 'margin-bottom: 10px', 'placeholder' => 'Email Address']) !!}
+                                            </div>
+                                            <div class="col-xs-12">
+                                                {!! Form::submit('Signup', ['class' => 'form-control btn-info']) !!}
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                                            <div class="col-xs-12">
+                                                {!! Form::select('university', ['MUST', 'XU', 'COC', 'LDCU'] , null , ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'University']) !!}
+                                            </div>
+
+                                            <div class="col-xs-12">
+                                                <!--- Firstname Field --->
+                                                {!! Form::label('firstname', 'Firstname:', ['class' => 'sr-only']) !!}
+                                                {!! Form::text('firstname', null, ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Firstname']) !!}
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <!--- Lastname Field --->
+                                                {!! Form::label('lastname', 'Lastname:', ['class' => 'sr-only']) !!}
+                                                {!! Form::text('lastname', null, ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Lastname']) !!}
+                                            </div>
+                                            <div class="col-xs-12">
+                                                {!! Form::select('year', ['1st Year', '2nd Year', '3rd Year', '4th Year', '5th Year'] , null , ['class' => 'form-control', 'style' => 'margin-bottom: 6px', 'placeholder' => 'Year']) !!}
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -297,4 +377,10 @@
     </div>
 </div>
 </body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{{URL::asset('js/jquery.min.js')}}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
+<script src="{{URL::asset('js/jasny-bootstrap.min.js')}}"></script>
+<script src="{{URL::asset('js/mobilesigning.js')}}"></script>
 </html>
